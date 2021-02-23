@@ -9,7 +9,10 @@ const SignUpFormModal = () => {
 
   return (
     <>
-      <button className="navbar__button" onClick={() => setShowModal(true)}>
+      <button
+        className="navbar__container-button"
+        onClick={() => setShowModal(true)}
+      >
         Sign Up
       </button>
       {showModal && (

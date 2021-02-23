@@ -1,3 +1,48 @@
-* {
-  background-color: blue;
+.login__form {
+  background-color: #f1e0c5;
 }
+.form__area {
+  background-color: #f1e0c5;
+}
+
+.errors__list {
+  color: red;
+}
+
+.form__input-area {
+  background-color: #f1e0c5;
+}
+
+.form__input-for-text {
+  background-color: #f1e0c5;
+  color: #342a21;
+}
+
+.login__form-button {
+  padding-top: 5px;
+}
+
+.login__form-submit-button {
+  height: 25px;
+  width: 80px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #ccbda6;
+  color: #342a21;
+  border-radius: 2em;
+}
+
+.login__form-submit-button:hover {
+  background-color: #382110;
+  color: #f4f1ea;
+  cursor: pointer;
+}
+
+/*
+green: #71816D
+light beige: #F1E0C5
+dark beige: #C9B79C
+brown: #342a21
+pink: #da667b
+
+*/

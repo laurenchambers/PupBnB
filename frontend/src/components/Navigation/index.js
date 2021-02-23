@@ -15,23 +15,42 @@ function Navigation({ isLoaded }) {
     sessionLinks = <ProfileButton user={sessionUser} />;
   } else {
     sessionLinks = (
-      <>
-        <LoginFormModal />
-        <SignUpFormModal />
+      <div className="navbar__pupbnb">
+        <ul>
+          <div>
+            <LoginFormModal />
+          </div>
+          <div>
+            <SignUpFormModal />
+          </div>
+        </ul>
         {/* <NavLink to="/signup">Sign Up</NavLink> */}
-      </>
+      </div>
     );
   }
 
   return (
-    <ul>
-      <li>
+    <>
+      <nav className="navbar__pupbnb">
         <NavLink exact to="/">
-          <h1>PupBnB</h1>
+          <div
+            style={{
+              fontWeight: "bold",
+              fontFamily: '"RocknRoll One", sans-serif',
+              listStyle: "none",
+              textDecoration: "none",
+              color: "#da667b",
+              fontSize: "60px",
+              display: "flex",
+              marginLeft: "8%",
+            }}
+          >
+            PupBnB
+          </div>
         </NavLink>
         {isLoaded && sessionLinks}
-      </li>
-    </ul>
+      </nav>
+    </>
   );
 }
 
