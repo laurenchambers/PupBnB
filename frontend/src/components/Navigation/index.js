@@ -1,9 +1,10 @@
 // frontend/src/components/Navigation/index.js
 import React from "react";
-import { useSelector } from "react-redux";
-import "./Navigation.css";
-import ProfileButton from "./ProfileButton";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import ProfileButton from "./ProfileButton";
+import LoginFormModal from "../LoginFormModal";
+import SignUpFormModal from "../SignupFormModal";
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
@@ -15,16 +16,18 @@ function Navigation({ isLoaded }) {
   } else {
     sessionLinks = (
       <>
-        <NavLink to="/login">Login</NavLink>
-        <NavLink to="/signup">Sign Up</NavLink>
+        <LoginFormModal />
+        <SignUpFormModal />
+        {/* <NavLink to="/signup">Sign Up</NavLink> */}
       </>
     );
   }
+
   return (
     <ul>
       <li>
         <NavLink exact to="/">
-          Home
+          <h1>PupBnB</h1>
         </NavLink>
         {isLoaded && sessionLinks}
       </li>

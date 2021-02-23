@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap");
+
 * {
   font-weight: bold;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  justify-items: center;
+  font-family: "RocknRoll One", sans-serif;
+  list-style: none;
+  text-decoration: none;
 }

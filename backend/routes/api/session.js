@@ -60,4 +60,19 @@ router.get("/", restoreUser, (req, res) => {
   } else return res.json({});
 });
 
+//demo user route
+router.post(
+  "/demo-user",
+  asyncHandler(async (req, res) => {
+    const { credential, password } = req.body;
+
+    const demoUser = await User.login({ credential, password });
+    await setTokenCookie(res, demoUser);
+
+    return res.json({
+      demoUser,
+    });
+  })
+);
+
 module.exports = router;
