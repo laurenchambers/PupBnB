@@ -22,9 +22,9 @@ const validateSignup = [
     .exists({ checkFalsy: true })
     .isLength({ min: 6 })
     .withMessage("Password must be 6 characters or more."),
-  // check("isHost")
-  //   .exists({ checkFalsy: true })
-  //   .withMessage("Please select if you are a host."),
+  check("isHost")
+    .exists({ checkFalsy: true })
+    .withMessage("Please select if you are a host."),
   handleValidationErrors,
 ];
 
@@ -33,7 +33,6 @@ router.post(
   "/",
   validateSignup,
   asyncHandler(async (req, res) => {
-    console.log(req.body);
     const { email, password, username, isHost } = req.body;
     const user = await User.signup({
       email,
