@@ -8,13 +8,18 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
+      isHost: {
+        allowNull: false,
+        type: Sequelize.STRING,
+        defaultValue: "false",
+      },
       username: {
         type: Sequelize.STRING(30),
         allowNull: false,
         unique: true,
       },
       email: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(256),
         allowNull: false,
         unique: true,
       },
