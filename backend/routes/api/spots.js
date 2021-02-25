@@ -6,10 +6,20 @@ const router = express.Router();
 const { Spot } = require("../../db/models");
 
 //spots route
+router.get(
+  "/:id(\\d+)",
+  asyncHandler(async (req, res) => {
+    const spot = await Spot.findByPk(req.params.id);
+    res.json({ spot });
+  })
+);
+
+//spots post route
 router.post(
-  "/spots",
+  "/",
   asyncHandler(async (req, res) => {
     const {
+      hostId,
       name,
       description,
       streetAddress,
@@ -18,8 +28,9 @@ router.post(
       zipCode,
       price,
     } = req.body;
-
-    const spot = await Spot.findAll({
+    //maybe change to findall
+    const spot = await Spot.create({
+      hostId,
       name,
       description,
       streetAddress,
