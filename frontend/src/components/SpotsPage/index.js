@@ -1,49 +1,52 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { getSpotsPage } from "../../store/spots";
-import "./SpotsPage.css";
+import { Link } from "react-router-dom";
+import { showMultipleSpots } from "../../store/spots";
 
-function SpotsPage() {
+function SpotsLandingPage() {
   const dispatch = useDispatch();
-  const { id } = useParams();
-
-  const spot = useSelector((state) => state.spots[id]);
+  const spotsDisplayed = useSelector((state) => Object.values(state.spots));
 
   useEffect(() => {
-    dispatch(getSpotsPage(id));
-  }, [dispatch, id]);
+    dispatch(showMultipleSpots());
+  }, [dispatch]);
 
-  if (!spot) return null;
-
-  const {
-    name,
-    streetAddress,
-    city,
-    state,
-    zipCode,
-    price,
-    description,
-    img,
-  } = spot;
+  if (!spotsDisplayed) return null;
 
   return (
     <>
-      <div className="individual-spot">
-        <img src={img} alt="Spot" />
-        <div className="spot-data">
-          <h2>{name}</h2>
-          <h3>{streetAddress}</h3>
-          <h4>{(city, state, zipCode)}</h4>
-          <h4>{price} per night!</h4>
-          <h4>{description}</h4>
-          <div className="book-button">
-            <button>Book Now!</button>
+      {spotsDisplayed.map((spotDisplayed) => {
+        const {
+          id,
+          name,
+          description,
+          streetAddress,
+          city,
+          state,
+          zipCode,
+          price,
+          img,
+        } = spotDisplayed;
+        return (
+          <div>
+            <Link to={`/spots/${id}`}>
+              <div className="individual-spot-card">
+                <img src={img} alt="" />
+                <div className="individual-spot-info">
+                  <h2>{name}</h2>
+                </div>
+              </div>
+            </Link>
+            <h3>{streetAddress}</h3>
+            <h3>
+              {city}, {state} {zipCode}
+            </h3>
+            <h3>{price} per night!</h3>
           </div>
-        </div>
-      </div>
+        );
+      })}
     </>
   );
 }
 
-export default SpotsPage;
+export default SpotsLandingPage;
