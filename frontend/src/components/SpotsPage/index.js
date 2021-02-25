@@ -42,6 +42,7 @@ function SpotsLandingPage() {
               {city}, {state} {zipCode}
             </h3>
             <h3>{price} per night!</h3>
+            <h3>About My Home: {description}</h3>
           </div>
         );
       })}
