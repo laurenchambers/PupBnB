@@ -1,0 +1,13 @@
+div.home-page {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  background: url("https://fur-babies.pet/wp-content/uploads/paw-print-background.jpg");
+}
+
+.home-page-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

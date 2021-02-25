@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { showMultipleSpots } from "../../store/spots";
+import "./SpotsPage.css";
 
 function SpotsLandingPage() {
   const dispatch = useDispatch();
@@ -28,21 +29,23 @@ function SpotsLandingPage() {
           img,
         } = spotDisplayed;
         return (
-          <div>
+          <div className="spot-container">
             <Link to={`/spots/${id}`}>
-              <div className="individual-spot-card">
+              {/* <div className="individual-spot-image"> */}
+              {/* </div> */}
+              <div className="individual-spot">
                 <img src={img} alt="" />
                 <div className="individual-spot-info">
                   <h2>{name}</h2>
+                  <h3>{streetAddress}</h3>
+                  <h3>
+                    {city}, {state} {zipCode}
+                  </h3>
+                  <h3>${price} per night!</h3>
+                  <h4>{description}</h4>
                 </div>
               </div>
             </Link>
-            <h3>{streetAddress}</h3>
-            <h3>
-              {city}, {state} {zipCode}
-            </h3>
-            <h3>{price} per night!</h3>
-            <h3>About My Home: {description}</h3>
           </div>
         );
       })}

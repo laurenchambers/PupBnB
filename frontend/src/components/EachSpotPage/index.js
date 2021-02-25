@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { showIndividualSpot } from "../../store/spots";
-import "./SpotsPage.css";
+import "./EachSpotPage.css";
 
 function SpotsPage() {
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ function SpotsPage() {
 
   return (
     <>
-      <div className="individual-spot">
+      <div className="individual-spot-container">
         <img src={img} alt="Spot" />
         <div className="spot-data">
           <h2>{name}</h2>

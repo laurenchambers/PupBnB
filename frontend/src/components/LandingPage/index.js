@@ -4,8 +4,8 @@ import "./LandingPage.css";
 function LandingPage() {
   return (
     <>
-      <div className="main">
-        <div className="main__layout">
+      <div className="home-page">
+        <div className="home-page-container">
           <SpotsPage />
         </div>
       </div>

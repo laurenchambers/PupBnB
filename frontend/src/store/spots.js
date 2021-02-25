@@ -2,6 +2,7 @@ import { csrfFetch } from "./csrf";
 
 const SHOW_SPOT_PAGE = "spots/SET_SPOTS_PAGE";
 const DISPLAY_MULTIPLE_SPOTS = "spots/DISPLAY_SPOTS";
+const CREATE_SPOT = "spots/CREATE_SPOT";
 
 export const setSpotsPage = (payload) => ({
   type: SHOW_SPOT_PAGE,
@@ -11,6 +12,11 @@ export const setSpotsPage = (payload) => ({
 export const displaySpots = (spots) => ({
   type: DISPLAY_MULTIPLE_SPOTS,
   payload: spots,
+});
+
+export const createSpot = (payload) => ({
+  type: CREATE_SPOT,
+  payload,
 });
 
 export const showIndividualSpot = (id) => async (dispatch) => {
@@ -31,6 +37,16 @@ export const showMultipleSpots = () => async (dispatch) => {
   }
 };
 
+export const createNewSpot = (spot) => async (dispatch) => {
+  const res = await csrfFetch("/api/spots/", {
+    method: "POST",
+    body: JSON.stringify(spot),
+  });
+  const data = await res.json();
+  dispatch(createNewSpot(data.spot));
+  return data;
+};
+
 //reducer
 const initialState = {};
 const spotsReducer = (state = initialState, action) => {
@@ -45,6 +61,9 @@ const spotsReducer = (state = initialState, action) => {
       for (let spot of action.payload) {
         newState[spot.id] = spot;
       }
+      return newState;
+    case CREATE_SPOT:
+      newState[action.payload.id] = action.payload;
       return newState;
     default:
       return state;

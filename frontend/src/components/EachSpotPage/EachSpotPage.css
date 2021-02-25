@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans&display=swap");
+
+.individual-spot-container {
+  display: flex;
+  width: 100%;
+  margin: 30px;
+  border-radius: 10px;
+  height: min-content;
+  overflow: wrap;
+}
+
+.individual-spot-container > img {
+  flex-direction: column;
+  justify-content: center;
+  object-fit: cover;
+  min-width: 300px;
+  min-height: 250px;
+  text-align: center;
+  width: 60%;
+  margin: 5.5px 20px 10px 0;
+  border-radius: 5px;
+}
+
+.spot-data {
+  margin-top: -5.5px;
+  border-radius: 10px;
+  padding: 20px;
+  padding-top: 15px;
+  border: 1;
+}
+
+/* border-radius: 10px;
+  object-fit: cover;
+  overflow: hidden;
+  width: 1000px;
+  box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+} */
