@@ -10,7 +10,7 @@ function NewSpotForm() {
   const [description, setDescription] = useState("");
   const [streetAddress, setStreetAddress] = useState("");
   const [city, setCity] = useState("");
-  const [stateName, setStateName] = useState("");
+  const [state, setState] = useState("");
   const [zipCode, setZipCode] = useState(null);
   const [price, setPrice] = useState(0);
   const [img, setImg] = useState("");
@@ -22,12 +22,21 @@ function NewSpotForm() {
       description,
       streetAddress,
       city,
-      stateName,
+      state,
       zipCode,
       price,
       img,
+      hostId: 1,
     };
     dispatch(createNewSpot(spot));
+    setName("");
+    setDescription("");
+    setStreetAddress("");
+    setCity("");
+    setState("");
+    setZipCode("");
+    setPrice("");
+    setImg("");
   };
 
   return (
@@ -92,8 +101,8 @@ function NewSpotForm() {
             <input
               className="form__input-for-text"
               type="text"
-              value={stateName}
-              onChange={(e) => setStateName(e.target.value)}
+              value={state}
+              onChange={(e) => setState(e.target.value)}
               required
             />
           </label>

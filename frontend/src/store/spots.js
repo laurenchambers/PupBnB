@@ -38,20 +38,32 @@ export const showMultipleSpots = () => async (dispatch) => {
 };
 
 export const createNewSpot = (spot) => async (dispatch) => {
+  const {
+    hostId,
+    name,
+    description,
+    streetAddress,
+    city,
+    state,
+    zipCode,
+    price,
+    img,
+  } = spot;
   const res = await csrfFetch("/api/spots", {
     method: "POST",
     body: JSON.stringify(
-      spot
-      //   {
-      // //   name,
-      // //   description,
-      // //   streetAddress,
-      // //   city,
-      // //   state,
-      // //   zipCode,
-      // //   price,
-      // //   img,
-      // // }
+      // spot
+      {
+        hostId,
+        name,
+        description,
+        streetAddress,
+        city,
+        state,
+        zipCode,
+        price,
+        img,
+      }
     ),
   });
   const data = await res.json();
