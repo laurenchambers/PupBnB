@@ -14,9 +14,9 @@ export const displaySpots = (spots) => ({
   payload: spots,
 });
 
-export const createSpot = (payload) => ({
+export const createSpot = (spot) => ({
   type: CREATE_SPOT,
-  payload,
+  payload: spot,
 });
 
 export const showIndividualSpot = (id) => async (dispatch) => {
@@ -38,12 +38,24 @@ export const showMultipleSpots = () => async (dispatch) => {
 };
 
 export const createNewSpot = (spot) => async (dispatch) => {
-  const res = await csrfFetch("/api/spots/", {
+  const res = await csrfFetch("/api/spots", {
     method: "POST",
-    body: JSON.stringify(spot),
+    body: JSON.stringify(
+      spot
+      //   {
+      // //   name,
+      // //   description,
+      // //   streetAddress,
+      // //   city,
+      // //   state,
+      // //   zipCode,
+      // //   price,
+      // //   img,
+      // // }
+    ),
   });
   const data = await res.json();
-  dispatch(createNewSpot(data.spot));
+  dispatch(createSpot(data.spot));
   return data;
 };
 

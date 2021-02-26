@@ -56,7 +56,7 @@ router.post(
       price,
     });
 
-    return res.json({
+    res.json({
       spot,
     });
   })

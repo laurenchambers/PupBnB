@@ -6,7 +6,8 @@ import ProfileButton from "./ProfileButton";
 import LoginFormModal from "../LoginFormModal";
 import SignUpFormModal from "../SignupFormModal";
 import SpotsPage from "../EachSpotPage";
-import CreateSpot from "../CreateSpot";
+// import CreateSpot from "../CreateSpot";
+import CreateSpotModal from "../CreateSpotModal";
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
@@ -26,7 +27,7 @@ function Navigation({ isLoaded }) {
             <SignUpFormModal />
           </div>
           <div>
-            <CreateSpot />
+            <CreateSpotModal />
           </div>
           <div>
             <SpotsPage />
