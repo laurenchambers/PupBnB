@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import EachSpotPage from "./components/EachSpotPage";
 import SpotsPage from "./components/SpotsPage";
+import SearchResults from "./components/Search";
 import LandingPage from "./components/LandingPage";
 
 function App() {
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/spots">
             <SpotsPage />
+          </Route>
+          <Route path="/search">
+            <SearchResults />
           </Route>
           <Route>
             <h1>Sorry, this page is currently under construction!</h1>

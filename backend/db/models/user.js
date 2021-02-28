@@ -96,13 +96,13 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   User.associate = function (models) {
-    User.hasMany(models.Booking, { foreignKey: "userId" });
-    const columnMapping = {
-      through: "Booking",
-      otherKey: "spotId",
-      foreignKey: "UserId",
-    };
-    User.belongsToMany(models.Spot, { columnMapping });
+    // User.hasMany(models.Booking, { foreignKey: "userId" });
+    // const columnMapping = {
+    //   through: "Booking",
+    //   otherKey: "spotId",
+    //   foreignKey: "UserId",
+    // };
+    // User.belongsToMany(models.Spot, { columnMapping });
   };
   return User;
 };
