@@ -20,6 +20,7 @@ router.get(
   "/:id",
   asyncHandler(async (req, res) => {
     const id = parseInt(req.params.id, 10);
+
     const spot = await Spot.findOne({
       where: {
         id,

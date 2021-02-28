@@ -43,7 +43,8 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   Spot.associate = function (models) {
-    // associations can be defined here
+    Spot.hasMany(models.Rating, { foreignKey: "spotId" });
+    Spot.hasMany(models.Comment, { foreignKey: "spotId" });
   };
   return Spot;
 };

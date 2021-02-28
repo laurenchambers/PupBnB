@@ -11,9 +11,9 @@ const SearchResults = () => {
   const location = useLocation();
   const query = location.search.split("=")[1];
 
-  const spots = useSelector((state) => state.spot);
+  const spots = useSelector((state) => state.spots);
   const findMatch = Object.values(spots).filter((spot) =>
-    spot.locationName.toLowerCase().includes(query.toLowerCase())
+    spot.name.toLowerCase().includes(query.toLowerCase())
   );
 
   useEffect(() => {
@@ -28,7 +28,9 @@ const SearchResults = () => {
 
   return (
     <div className="search-container">
-      <p className="search-results">Search Results</p>
+      <p className="search-results">
+        Spots Matching Your Search are Listed Below!
+      </p>
       <div className="search-section">
         {findMatch.map((spot) => {
           const {
