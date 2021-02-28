@@ -3,40 +3,40 @@ const faker = require("faker");
 const bcrypt = require("bcryptjs");
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert(
-      "Users",
-      [
-        {
-          email: "demo@user.io",
-          username: "Demo-lition",
-          isHost: false,
-          hashedPassword: bcrypt.hashSync("password"),
-        },
-        {
-          email: faker.internet.email(),
-          username: "FakeUser1",
-          isHost: false,
-          hashedPassword: bcrypt.hashSync(faker.internet.password()),
-        },
-        {
-          email: faker.internet.email(),
-          username: "FakeUser2",
-          isHost: false,
-          hashedPassword: bcrypt.hashSync(faker.internet.password()),
-        },
-      ],
-      {}
-    );
+  up: async (queryInterface, Sequelize) => {
+    const users = [];
+    const demo = {
+      email: "demo@user.io",
+      username: "Demo-lition",
+      isHost: false,
+      hashedPassword: await bcrypt.hashSync("password"),
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    };
+    users.push(demo);
+
+    for (let i = 0; i < 100; i++) {
+      const otherUser = {
+        email: faker.internet.email(),
+        username: faker.internet.userName(),
+        isHost: false,
+        hashedPassword: await bcrypt.hashSync(faker.internet.password()),
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      };
+      users.push(otherUser);
+    }
+    return queryInterface.bulkInsert("Users", users, {});
   },
 
   down: (queryInterface, Sequelize) => {
-    const Op = Sequelize.Op;
+    // const Op = Sequelize.Op;
     return queryInterface.bulkDelete(
       "Users",
-      {
-        username: { [Op.in]: ["Demo-lition", "FakeUser1", "FakeUser2"] },
-      },
+      null,
+      // {
+      //   username: { [Op.in]: ["Demo-lition", "FakeUser1", "FakeUser2"] },
+      // },
       {}
     );
   },
