@@ -46,6 +46,9 @@ const ratingsReducer = (state = {}, action) => {
       return newState;
     }
     case GET_RATINGS:
+      //   for (let rating of action.payload) {
+      //     newState[rating[0].id] = rating.id;
+      //   }
       newState = [...action.payload];
       return newState;
     default:

@@ -10,7 +10,7 @@ function SpotsPage() {
   const dispatch = useDispatch();
   const { id } = useParams();
   const spot = useSelector((state) => state.spots[id]);
-  // const ratings = useSelector((state) => state.spots;
+  // const ratings = useSelector((state) => state.ratings[id];
 
   useEffect(() => {
     dispatch(getSpotsRatings(id));
