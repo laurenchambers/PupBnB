@@ -19,6 +19,8 @@ const LeaveReview = ({ sessionUser }) => {
     const newUserRating = { rating, comment };
 
     dispatch(postNewRating(userId, spotId, newUserRating));
+    setRating("");
+    setComment("");
   };
 
   useEffect(() => {

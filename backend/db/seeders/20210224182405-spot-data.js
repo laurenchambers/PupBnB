@@ -37,7 +37,7 @@ module.exports = {
         hostId: 3,
         name: "Harry's Doggie Wonderland",
         description:
-          "Your pup is going to have the best time and my amazin dog house - it even has a pool! What better way to cool off from the TX heat.",
+          "Your pup is going to have the best time and my amazing dog house - it even has a pool! What better way to cool off from the TX heat.",
         streetAddress: "907 Dartmoor Dr",
         city: "Austin",
         state: "TX",
