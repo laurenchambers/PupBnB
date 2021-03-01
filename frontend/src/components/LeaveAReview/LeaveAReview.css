@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans&display=swap");
+
+.review-form-title {
+  margin-top: 50px;
+  font-size: 30px;
+  font-family: "Architects Daughter", cursive;
+}
+
+.review-button {
+  margin-left: 15%;
+  margin-top: 10px;
+  height: 40px;
+  width: 200px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: rgb(253, 216, 222);
+  color: #342a21;
+  border-radius: 2em;
+  font-family: "RocknRoll One", sans-serif;
+  outline: none;
+}
+
+.review-form-input {
+  font-family: "RocknRoll One", sans-serif;
+  padding: 5px;
+  outline: none;
+}
+
+.review-form-number {
+  background-color: #f1eade;
+  color: #342a21;
+  margin: 2px;
+  border-radius: 0.5em;
+  outline: none;
+}
+
+.review-form-text {
+  background-color: #f1eade;
+  color: #342a21;
+  margin: 2px;
+  border-radius: 0.5em;
+  width: 400px;
+  height: 150px;
+  outline: none;
+}
+
+.review-button:hover {
+  background-color: rgb(255, 176, 189);
+  color: #342a21;
+  cursor: pointer;
+  outline: none;
+}

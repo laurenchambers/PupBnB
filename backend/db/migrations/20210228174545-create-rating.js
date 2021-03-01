@@ -11,6 +11,9 @@ module.exports = {
       rating: {
         type: Sequelize.INTEGER,
       },
+      comment: {
+        type: Sequelize.TEXT,
+      },
       spotId: {
         allowNull: false,
         type: Sequelize.INTEGER,

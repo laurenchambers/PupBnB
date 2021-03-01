@@ -6,7 +6,9 @@ module.exports = (sequelize, DataTypes) => {
       rating: {
         type: DataTypes.INTEGER,
       },
-      
+      comment: {
+        type: DataTypes.TEXT,
+      },
       spotId: {
         type: DataTypes.INTEGER,
         allowNull: false,

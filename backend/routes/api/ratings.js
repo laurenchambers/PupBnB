@@ -20,6 +20,23 @@ router.get(
 );
 
 //POST A RATING
-// router.post('/:userId/:spotId', asyncHandler(async(req, res) => {}
+router.post(
+  "/:userId/:spotId",
+  asyncHandler(async (req, res) => {
+    const userId = parseInt(req.params.userId);
+    const spotId = parseInt(req.params.spotId);
+    const { rating, comment } = req.body;
+
+    await Review.create({
+      userId,
+      spotId,
+      body: comment,
+      rating,
+    });
+    // res.json({
+    //   newRating,
+    // });
+  })
+);
 
 module.exports = router;

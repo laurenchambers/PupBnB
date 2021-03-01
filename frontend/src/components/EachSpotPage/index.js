@@ -4,12 +4,13 @@ import { useParams } from "react-router-dom";
 import { showIndividualSpot } from "../../store/spots";
 import "./EachSpotPage.css";
 import { getSpotsRatings } from "../../store/ratings";
+import LeaveReview from "../LeaveAReview";
 
 function SpotsPage() {
   const dispatch = useDispatch();
   const { id } = useParams();
   const spot = useSelector((state) => state.spots[id]);
-  const ratings = useSelector((state) => state.ratings[0]);
+  // const ratings = useSelector((state) => state.spots;
 
   useEffect(() => {
     dispatch(getSpotsRatings(id));
@@ -28,7 +29,7 @@ function SpotsPage() {
     img,
   } = spot;
 
-  const { rating } = ratings;
+  // const { rating, comment } = ratings;
 
   return (
     <>
@@ -45,8 +46,9 @@ function SpotsPage() {
           <div>
             <button className="book-now-button">Book Now!</button>
           </div>
-          <h6>Average Rating: {rating}</h6>
-          <h6>User Comments:</h6>
+          {/* <h6>Average Rating: {rating}</h6> */}
+          {/* <h6>User Comments: {comment}</h6> */}
+          <LeaveReview />
         </div>
       </div>
     </>

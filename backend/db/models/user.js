@@ -104,7 +104,6 @@ module.exports = (sequelize, DataTypes) => {
     // };
     // User.belongsToMany(models.Spot, { columnMapping });
     User.hasMany(models.Rating, { foreignKey: "userId" });
-    User.hasMany(models.Comment, { foreignKey: "userId" });
   };
   return User;
 };

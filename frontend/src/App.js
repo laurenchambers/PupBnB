@@ -9,6 +9,7 @@ import EachSpotPage from "./components/EachSpotPage";
 import SpotsPage from "./components/SpotsPage";
 import SearchResults from "./components/Search";
 import LandingPage from "./components/LandingPage";
+import LeaveReview from "./components/LeaveAReview";
 
 function App() {
   const dispatch = useDispatch();
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route path="/search">
             <SearchResults />
+          </Route>
+          <Route path="ratings/:userId/:spotId">
+            <LeaveReview />
           </Route>
           <Route>
             <h1>Sorry, this page is currently under construction!</h1>
