@@ -5,6 +5,10 @@ import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import LoginFormModal from "../LoginFormModal";
 import SignUpFormModal from "../SignupFormModal";
+import SpotsPage from "../EachSpotPage";
+// import CreateSpot from "../CreateSpot";
+import SearchBar from "../SearchBar";
+import CreateSpotModal from "../CreateSpotModal";
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
@@ -22,6 +26,12 @@ function Navigation({ isLoaded }) {
           </div>
           <div>
             <SignUpFormModal />
+          </div>
+          <div>
+            <CreateSpotModal />
+          </div>
+          <div>
+            <SpotsPage />
           </div>
         </ul>
         {/* <NavLink to="/signup">Sign Up</NavLink> */}
@@ -48,6 +58,7 @@ function Navigation({ isLoaded }) {
             PupBnB
           </div>
         </NavLink>
+        <SearchBar />
         {isLoaded && sessionLinks}
       </nav>
     </>

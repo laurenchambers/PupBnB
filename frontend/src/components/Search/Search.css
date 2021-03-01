@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans&display=swap");
+
+/* .search-results {
+  display: flex;
+  /* width: 100%; */
+/* margin: 30px;
+  border-radius: 10px;
+} */
+/*
+.card-container {
+  display: flex;
+  width: 400px;
+  margin: 30px;
+  border-radius: 10px;
+  height: min-content;
+  flex-direction: column;
+  justify-content: center;
+} */
+
+/* .card > img {
+  border-radius: 10px;
+  object-fit: cover;
+  overflow: hidden;
+  width: 350px;
+  height: 350px;
+  box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+}
+
+.card__info {
+  flex-direction: column; */
+/* justify-content: center; */
+/* } */
+
+/* .card > img {
+  flex-direction: column;
+  justify-content: center;
+  width: 350px;
+  text-align: center;
+  width: 60%;
+  margin: 5.5px 20px 10px 0;
+  border-radius: 5px;
+} */
+/* .card__info {
+  margin-top: -5.5px;
+  border-radius: 10px;
+  padding: 20px;
+  padding-top: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
+  width: 400px;
+}
+
+.card__info > h2 {
+  font-family: "Architects Daughter", cursive;
+  font-size: 35px;
+  font-weight: bold;
+  color: rgb(110, 4, 4);
+}
+
+.card__info > h3 {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: "Architects Daughter", cursive;
+  margin-left: 25%;
+  margin-top: 1px;
+  margin-bottom: 4px;
+  color: rgb(71, 1, 1);
+}
+.card__info > h4 {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "DM Sans", sans-serif;
+  margin-left: 30%;
+  color: black;
+}
+
+.card__info > h5 {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "DM Sans", sans-serif;
+  color: black;
+  overflow: wrap;
+} */
+
+.search-new-container {
+  /* display: table; */
+  width: 80%;
+  margin: auto;
+  height: 100%;
+  /* margin-left: 30px;  */
+}
+
+p.search-results {
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration-color: rgb(32, 28, 28);
+  font-family: "RocknRoll One", sans-serif;
+}
+
+div.search-each-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-radius: 2em;
+}
+
+.card {
+  overflow: wrap;
+  width: 400px;
+  box-shadow: 0px 6px 18px -9px rgba(0, 0, 0.75, 0.75);
+  cursor: pointer;
+  border-radius: 2em;
+}
+
+.card__info > h2 {
+  font-family: "Architects Daughter", cursive;
+  padding-top: 20px;
+  color: rgb(71, 1, 1);
+  padding-left: 15%;
+}
+
+.card__info > h3 {
+  font-family: "DM Sans", sans-serif;
+  color: rgb(71, 1, 1);
+  padding-left: 30%;
+}
+
+.card__info > h4 {
+  font-family: "DM Sans", sans-serif;
+  color: rgb(71, 1, 1);
+  padding-bottom: 20px;
+  padding-left: 35%;
+  font-weight: bold;
+}
+
+.card > img {
+  object-fit: cover;
+  width: 400px;
+  height: 250px;
+}

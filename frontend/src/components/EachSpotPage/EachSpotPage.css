@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans&display=swap");
+
+.individual-spot-container {
+  display: flex;
+  width: 100%;
+  margin: 30px;
+  border-radius: 10px;
+  height: min-content;
+  overflow: wrap;
+}
+
+.individual-spot-container > img {
+  flex-direction: column;
+  justify-content: center;
+  object-fit: cover;
+  width: 500px;
+  text-align: center;
+  width: 60%;
+  margin: 5.5px 20px 10px 0;
+  border-radius: 5px;
+}
+.spot-data {
+  margin-top: -5.5px;
+  border-radius: 10px;
+  padding: 20px;
+  padding-top: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
+  width: 400px;
+}
+
+.spot-data > h2 {
+  font-family: "Architects Daughter", cursive;
+  font-size: 35px;
+  font-weight: bold;
+  color: rgb(110, 4, 4);
+}
+
+.spot-data > h3 {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: "Architects Daughter", cursive;
+  margin-left: 25%;
+  margin-top: 1px;
+  margin-bottom: 4px;
+  color: rgb(71, 1, 1);
+}
+.spot-data > h4 {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "DM Sans", sans-serif;
+  margin-left: 30%;
+  color: rgb(71, 1, 1);
+}
+
+.spot-data > h5 {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "DM Sans", sans-serif;
+  color: rgb(71, 1, 1);
+  overflow: wrap;
+}
+
+.book-now-button {
+  margin-left: 35%;
+  height: 30px;
+  width: 100px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #f1eade;
+  color: #342a21;
+  border-radius: 2em;
+  font-family: "RocknRoll One", sans-serif;
+  outline: none;
+}
+
+.book-now-button:hover {
+  background-color: #382110;
+  color: #f4f1ea;
+  cursor: pointer;
+}
+
+/* border-radius: 10px;
+  object-fit: cover;
+  overflow: hidden;
+  width: 1000px;
+  box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+} */
+
+/* .individual-spot-info {
+  font-family: "Architects Daughter", cursive;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: -9px;
+  border-radius: 10px;
+  padding: 20px;
+  padding-top: 20px;
+  border: 1;
+  text-decoration: none; */
+/* align-items: center;
+  justify-content: center; */
+/* } */
+/*
+.individual-spot-info > h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: rgb(110, 4, 4);
+}
+
+.individual-spot-info > h3 {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Architects Daughter", cursive;
+  margin-left: 25%;
+  margin-top: 1px;
+  margin-bottom: 2px;
+  color: rgb(71, 1, 1);
+}
+.individual-spot-info > h4 {
+  font-size: 19px;
+  font-weight: bold;
+  font-family: "DM Sans", sans-serif;
+  margin: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: black;
+} */

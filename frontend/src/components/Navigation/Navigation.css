@@ -13,7 +13,7 @@
 
 body {
   background-color: rgb(253, 216, 222);
-  background-image: url("./paws.png");
+  background: url("https://fur-babies.pet/wp-content/uploads/paw-print-background.jpg");
 }
 
 .navbar__pupbnb {
@@ -30,7 +30,7 @@ body {
   align-items: center;
 }
 .navbar__container-button {
-  display: flex;
+  display: flex-end;
   width: 100px;
   height: 30px;
   font-size: 18px;
@@ -41,10 +41,35 @@ body {
   background-color: #f1e0c5;
   border-radius: 2em;
   justify-content: center;
+  align-items: center;
   margin-bottom: 5px;
+  margin-left: 15%;
+}
+
+.navbar__container-button-two {
+  display: flex-end;
+  width: 150px;
+  height: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "RocknRoll One", sans-serif;
+  color: #342a21;
+  background-color: #f1e0c5;
+  border-radius: 2em;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  outline: none;
 }
 
 .navbar__container-button:hover {
+  cursor: pointer;
+  background-color: #c9b79c;
+  color: #da667b;
+  outline: none;
+}
+
+.navbar__container-button-two:hover {
   cursor: pointer;
   background-color: #c9b79c;
   color: #da667b;

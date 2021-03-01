@@ -44,11 +44,21 @@ router.post(
   })
 );
 
-// Log out route
-router.delete("/", (_req, res) => {
-  res.clearCookie("token");
-  return res.json({ message: "success" });
-});
+//demo user route
+router.post(
+  "/demo",
+  asyncHandler(async (req, res) => {
+    const { credential, password } = req.body;
+
+    const demo = await User.login({ credential, password });
+
+    await setTokenCookie(res, demo);
+
+    return res.json({
+      demo,
+    });
+  })
+);
 
 // Restore session user
 router.get("/", restoreUser, (req, res) => {
@@ -60,19 +70,10 @@ router.get("/", restoreUser, (req, res) => {
   } else return res.json({});
 });
 
-//demo user route
-router.post(
-  "/demo-user",
-  asyncHandler(async (req, res) => {
-    const { credential, password } = req.body;
-
-    const demoUser = await User.login({ credential, password });
-    await setTokenCookie(res, demoUser);
-
-    return res.json({
-      demoUser,
-    });
-  })
-);
+// Log out route
+router.delete("/", (_req, res) => {
+  res.clearCookie("token");
+  return res.json({ message: "success" });
+});
 
 module.exports = router;

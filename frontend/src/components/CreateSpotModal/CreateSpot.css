@@ -26,18 +26,22 @@
   margin: 2px;
   border-radius: 0.5em;
 }
-
-.login__form-button {
-  padding: 4px;
+.form__dropdown-button {
+  border-radius: 0.5em;
+  font-family: "RocknRoll One", sans-serif;
+  font-size: 12px;
+}
+.new__form-button {
+  padding: 5px;
 }
 
-.login__form-submit-button {
+.new__form-submit-button {
   height: 30px;
-  width: 100px;
+  width: 150px;
   font-size: 12px;
   font-weight: bold;
   background-color: #f1eade;
-  color: #342a21;
+  color: #272019ee;
   border-radius: 2em;
   font-family: "RocknRoll One", sans-serif;
   outline: none;
@@ -48,15 +52,3 @@
   color: #f4f1ea;
   cursor: pointer;
 }
-.space-between {
-  padding: 2px;
-}
-
-/*
-green: #71816D
-light beige: #F1E0C5
-dark beige: #C9B79C
-brown: #342a21
-pink: #da667b
-
-*/
