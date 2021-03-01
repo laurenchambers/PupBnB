@@ -32,11 +32,13 @@ function SpotsPage() {
         <div className="spot-data">
           <h2>{name}</h2>
           <h3>{streetAddress}</h3>
-          <h4>{(city, state, zipCode)}</h4>
-          <h4>{price} per night!</h4>
-          <h4>{description}</h4>
-          <div className="book-button">
-            <button>Book Now!</button>
+          <h3>
+            {city}, {state} {zipCode}
+          </h3>
+          <h4>${price} per night!</h4>
+          <h5>{description}</h5>
+          <div>
+            <button className="book-now-button">Book Now!</button>
           </div>
         </div>
       </div>

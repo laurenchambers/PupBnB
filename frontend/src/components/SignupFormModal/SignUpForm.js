@@ -1,6 +1,6 @@
 // frontend/src/components/SignupFormPage/index.js
 import React, { useState } from "react";
-import Select from "react-select";
+// import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
@@ -43,62 +43,85 @@ function SignUpFormPage() {
   console.log(isHost === true);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => (
-          <li key={idx}>{error}</li>
-        ))}
-      </ul>
-      <label>
-        Email
-        <input
-          type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Username
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Password
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Confirm Password
-        <input
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Are You a Host?
-        <select
-          value={isHost}
-          // options={options}
-          onChange={(e) => setHost(e.target.value)}
-          required
-        >
-          <option value={"true"}>Yes</option>
-          <option value={"false"}>No</option>
-        </select>
-      </label>
-      <button type="submit">Sign Up</button>
-    </form>
+    <div className="entire-form">
+      <form className="login__form" onSubmit={handleSubmit}>
+        <div className="form__area">
+          <ul className="errors__list">
+            {errors.map((error, idx) => (
+              <li key={idx}>{error}</li>
+            ))}
+          </ul>
+          <div className="form__input-area">
+            <label>
+              Email
+              <input
+                className="form__input-for-text"
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </label>
+          </div>
+          <div className="form__input-area">
+            <label>
+              Username
+              <input
+                className="form__input-for-text"
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+            </label>
+          </div>
+          <div className="form__input-area">
+            <label>
+              Password
+              <input
+                className="form__input-for-text"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </label>
+          </div>
+          <div className="form__input-area">
+            <label>
+              Confirm Password
+              <input
+                className="form__input-for-text"
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+            </label>
+          </div>
+          <div className="form__dropdown-button">
+            <label>
+              Are You a Host?
+              <select
+                className="form__dropdown-button"
+                value={isHost}
+                // options={options}
+                onChange={(e) => setHost(e.target.value)}
+                required
+              >
+                <option value={"true"}>Yes</option>
+                <option value={"false"}>No</option>
+              </select>
+            </label>
+          </div>
+          <div className="login__form-button">
+            <button className="login__form-submit-button" type="submit">
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
   );
 }
 
