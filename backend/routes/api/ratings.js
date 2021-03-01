@@ -3,25 +3,23 @@ const express = require("express");
 const asyncHandler = require("express-async-handler");
 
 const router = express.Router();
-const { Comment, Spot } = require("../../db/models/");
+const { Rating } = require("../../db/models/");
 
-// const spots = await Spot.findAll()
-// const comments = await Comment.findAll();
+//GET THE RATINGS
+router.get(
+  "/:spotId",
+  asyncHandler(async (req, res) => {
+    const spotId = parseInt(req.params.spotId);
+    const spotRatings = await Rating.findAll({
+      where: {
+        spotId,
+      },
+    });
+    res.json({ spotRatings });
+  })
+);
 
-// for (let i = 0; i < spots.length; i++) {
-//   const spotId = spots[i].id
-//   const allComments = await Comment.findAll({
-//     where: {
-//       spotId,
-//     }
-//   })
-// }
-// router.get(
-//   "/",
-//   asyncHandler(async (req, res) => {
-//     const comments = await Comment.findAll();
-//     res.json({ comments });
-//   })
-// );
+//POST A RATING
+// router.post('/:userId/:spotId', asyncHandler(async(req, res) => {}
 
 module.exports = router;

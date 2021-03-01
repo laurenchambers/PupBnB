@@ -4,6 +4,7 @@ const asyncHandler = require("express-async-handler");
 
 const router = express.Router();
 const { Spot } = require("../../db/models");
+const { Comment } = require("../../db/models");
 
 //route to display ALL spots
 router.get(
@@ -31,6 +32,15 @@ router.get(
   })
 );
 
+//ratings
+router.get(
+  "/ratings",
+  asyncHandler(async (req, res) => {
+    console.log(req.params);
+    const comments = await Comment.findAll();
+    res.json({ comments });
+  })
+);
 // spots post route
 router.post(
   "/",

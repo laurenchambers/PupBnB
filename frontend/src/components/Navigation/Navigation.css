@@ -62,6 +62,52 @@ body {
   outline: none;
 }
 
+.profile-dropdown {
+  font-family: "RocknRoll One", sans-serif;
+  color: #342a21;
+  list-style-type: none;
+}
+
+.profile-button {
+  width: 100px;
+  height: 25px;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: "RocknRoll One", sans-serif;
+  color: #342a21;
+  background-color: #f1e0c5;
+  border-radius: 2em;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  outline: none;
+}
+
+.profile-button:hover {
+  cursor: pointer;
+  background-color: #c9b79c;
+  color: #da667b;
+  outline: none;
+}
+.buttons-both {
+  display: flex;
+}
+.paw-button {
+  width: 100px;
+  height: 25px;
+  font-size: 13px;
+  padding: 2px;
+  font-weight: bold;
+  font-family: "RocknRoll One", sans-serif;
+  color: #342a21;
+  background-color: #f1e0c5;
+  border-radius: 2em;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  outline: none;
+}
+
 .navbar__container-button:hover {
   cursor: pointer;
   background-color: #c9b79c;
