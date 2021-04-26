@@ -10,6 +10,7 @@ function SpotsPage() {
   const dispatch = useDispatch();
   const { id } = useParams();
   const spot = useSelector((state) => state.spots[id]);
+  const ratings = useSelector((state) => state.ratings);
   // const ratings = useSelector((state) => state.ratings[id];
 
   useEffect(() => {
@@ -46,8 +47,8 @@ function SpotsPage() {
           <div>
             <button className="book-now-button">Book Now!</button>
           </div>
-          {/* <h6>Average Rating: {rating}</h6> */}
-          {/* <h6>User Comments: {comment}</h6> */}
+          <h6>Average Rating: {ratings?.map((rating) => rating.rating)}</h6>
+          <h6>User Comments: {ratings?.map((rating) => rating.comment)}</h6>
           <LeaveReview />
         </div>
       </div>

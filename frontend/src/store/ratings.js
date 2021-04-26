@@ -10,10 +10,10 @@ const getRatings = (payload) => {
   };
 };
 
-const postRating = (rating, comment) => {
+const postRating = (payload) => {
   return {
     type: POST_RATING,
-    payload: { rating, comment },
+    payload,
   };
 };
 
@@ -25,24 +25,25 @@ export const getSpotsRatings = (spotId) => async (dispatch) => {
   return data;
 };
 
-export const postNewRating = (userId, spotId, newUserRating) => async (
+export const postNewRating = (userId, spotId, rating, comment) => async (
   dispatch
 ) => {
   const { rating, comment } = newUserRating;
-  const res = await csrfFetch(`/api/ratings/${userId}/${spotId}`, {
+  const res = await csrfFetch(`/api/ratings/${spotId}`, {
     method: "POST",
-    body: JSON.stringify({ rating, comment }),
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ userId, spotId, rating, comment }),
   });
   const data = await res.json();
-  dispatch(postRating(data.rating, data.comment));
+  dispatch(postRating(data));
 };
 
 const ratingsReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
     case POST_RATING: {
-      newState.rating = { ...action.payload.rating };
-      newState.comment = { ...action.payload.comment };
+      newState.rating = { ...action.payload };
+      // newState.comment = { ...action.payload.comment };
       return newState;
     }
     case GET_RATINGS:
