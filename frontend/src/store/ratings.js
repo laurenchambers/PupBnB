@@ -28,7 +28,7 @@ export const getSpotsRatings = (spotId) => async (dispatch) => {
 export const postNewRating = (userId, spotId, rating, comment) => async (
   dispatch
 ) => {
-  const { rating, comment } = newUserRating;
+  // const { rating, comment } = newUserRating;
   const res = await csrfFetch(`/api/ratings/${spotId}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },

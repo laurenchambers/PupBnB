@@ -10,6 +10,7 @@ router.get(
   "/:spotId",
   asyncHandler(async (req, res) => {
     const spotId = parseInt(req.params.spotId);
+    console.log("ratingPRAMS", req.params);
     const spotRatings = await Rating.findAll({
       where: {
         spotId,
