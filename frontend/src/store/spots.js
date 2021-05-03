@@ -4,6 +4,7 @@ const SHOW_SPOT_PAGE = "spots/SET_SPOTS_PAGE";
 const DISPLAY_MULTIPLE_SPOTS = "spots/DISPLAY_SPOTS";
 const CREATE_SPOT = "spots/CREATE_SPOT";
 const NEW_RATING = "spots/newRating";
+const DISPLAY_SIX_SPOTS = "spots/DISPLAY_SIX_SPOTS";
 
 export const setSpotsPage = (payload) => ({
   type: SHOW_SPOT_PAGE,
@@ -13,6 +14,11 @@ export const setSpotsPage = (payload) => ({
 export const displaySpots = (spots) => ({
   type: DISPLAY_MULTIPLE_SPOTS,
   payload: spots,
+});
+
+export const showSix = (sixSpots) => ({
+  type: DISPLAY_SIX_SPOTS,
+  payload: sixSpots,
 });
 
 export const createSpot = (spot) => ({
@@ -27,8 +33,9 @@ const newRating = (payload) => {
   };
 };
 
-export const showIndividualSpot = (spotId) => async (dispatch) => {
-  const res = await csrfFetch(`/api/spots/${spotId}`);
+export const showIndividualSpot = (id) => async (dispatch) => {
+  const numId = Number(id);
+  const res = await csrfFetch(`/api/spots/${numId}`);
   const data = await res.json();
   console.log("data!!!", data);
   console.log(data.spot);
@@ -42,6 +49,16 @@ export const showMultipleSpots = () => async (dispatch) => {
     const data = await res.json();
     // console.log("MMULTIPLE", data);
     dispatch(displaySpots(data.spots));
+    return res;
+  }
+};
+
+export const showSixSpots = () => async (dispatch) => {
+  const res = await csrfFetch(`/api/spots/six/`);
+  if (res.ok) {
+    const data = await res.json();
+    // console.log("MMULTIPLE", data);
+    dispatch(showSix(data.spots));
     return res;
   }
 };
@@ -96,26 +113,39 @@ export const newNewRating = (userId, spotId, rating, comment) => async (
 //reducer
 const initialState = {};
 const spotsReducer = (state = initialState, action) => {
-  const newState = Object.assign({}, state);
+  let newState;
   switch (action.type) {
     case SHOW_SPOT_PAGE:
-      console.log(action.payload);
-      newState[action.payload.spot] = action.payload;
+      newState = {};
+      action.payload.forEach((spot) => {
+        newState[spot.id] = spot;
+      });
       return newState;
     case DISPLAY_MULTIPLE_SPOTS:
-      //   console.log(action.payload);
-      for (let spot of action.payload) {
+      newState = {};
+      action.payload.forEach((spot) => {
         newState[spot.id] = spot;
-      }
+      });
       return newState;
-    case CREATE_SPOT:
-      newState[action.payload.id] = action.payload;
+    case DISPLAY_SIX_SPOTS:
+      newState = {};
+      action.payload.forEach((spot) => {
+        newState[spot.id] = spot;
+      });
       return newState;
-    case NEW_RATING: {
+    case CREATE_SPOT: {
+      newState = Object.assign({}, state, {
+        [action.payload.id]: action.payload,
+      });
+
+      return newState;
+    }
+    case NEW_RATING:
+      newState = {};
       newState.rating = { ...action.payload };
       // newState.comment = { ...action.payload.comment };
       return newState;
-    }
+
     default:
       return state;
   }

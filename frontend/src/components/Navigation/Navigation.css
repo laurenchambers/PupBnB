@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 /* .navbar__pupbnb-logo {
   font-weight: bold;
@@ -12,8 +13,7 @@
 } */
 
 body {
-  background-color: rgb(253, 216, 222);
-  background: url("https://fur-babies.pet/wp-content/uploads/paw-print-background.jpg");
+  background-color: white;
 }
 
 .navbar__pupbnb {
@@ -22,6 +22,11 @@ body {
   margin-left: 20px;
   margin-right: 20px;
   padding: 10px;
+  height: 100px;
+}
+
+.navbar__pupbnb ul {
+  margin-top: -10px;
 }
 
 .navbar__container-buttons {
@@ -35,11 +40,13 @@ body {
   height: 30px;
   font-size: 18px;
   font-weight: bold;
-  font-family: "RocknRoll One", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   align-items: center;
-  color: #342a21;
-  background-color: #f1e0c5;
-  border-radius: 2em;
+  background-color: #ffffff !important;
+  border: 1px solid #dddddd !important;
+  border-radius: 40px !important;
+  box-shadow: 0px 1px 2px rgb(0 0 0 / 8%), 0px 4px 12px rgb(0 0 0 / 5%) !important;
+  color: #222222;
   justify-content: center;
   align-items: center;
   margin-bottom: 5px;
@@ -52,10 +59,12 @@ body {
   height: 30px;
   font-size: 18px;
   font-weight: bold;
-  font-family: "RocknRoll One", sans-serif;
-  color: #342a21;
-  background-color: #f1e0c5;
-  border-radius: 2em;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffffff !important;
+  border: 1px solid #dddddd !important;
+  border-radius: 40px !important;
+  box-shadow: 0px 1px 2px rgb(0 0 0 / 8%), 0px 4px 12px rgb(0 0 0 / 5%) !important;
+  color: #222222;
   justify-content: center;
   align-items: center;
   margin-bottom: 5px;
@@ -63,7 +72,7 @@ body {
 }
 
 .profile-dropdown {
-  font-family: "RocknRoll One", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #342a21;
   list-style-type: none;
 }
@@ -73,10 +82,13 @@ body {
   height: 25px;
   font-size: 12px;
   font-weight: bold;
-  font-family: "RocknRoll One", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #342a21;
-  background-color: #f1e0c5;
-  border-radius: 2em;
+  background-color: #ffffff !important;
+  border: 1px solid #dddddd !important;
+  border-radius: 40px !important;
+  box-shadow: 0px 1px 2px rgb(0 0 0 / 8%), 0px 4px 12px rgb(0 0 0 / 5%) !important;
+  color: #222222;
   justify-content: center;
   align-items: center;
   margin-bottom: 5px;
@@ -86,7 +98,7 @@ body {
 .profile-button:hover {
   cursor: pointer;
   background-color: #c9b79c;
-  color: #da667b;
+  color: #faa9b8;
   outline: none;
 }
 .buttons-both {
@@ -98,10 +110,12 @@ body {
   font-size: 13px;
   padding: 2px;
   font-weight: bold;
-  font-family: "RocknRoll One", sans-serif;
-  color: #342a21;
-  background-color: #f1e0c5;
-  border-radius: 2em;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffffff !important;
+  border: 1px solid #dddddd !important;
+  border-radius: 40px !important;
+  box-shadow: 0px 1px 2px rgb(0 0 0 / 8%), 0px 4px 12px rgb(0 0 0 / 5%) !important;
+  color: #222222;
   justify-content: center;
   align-items: center;
   margin-bottom: 5px;

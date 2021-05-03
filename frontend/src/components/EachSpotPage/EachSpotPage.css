@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 .individual-spot-container {
   display: flex;
@@ -31,7 +32,7 @@
 }
 
 .spot-data > h2 {
-  font-family: "Architects Daughter", cursive;
+  font-family: 'Montserrat', sans-serif;
   font-size: 35px;
   font-weight: bold;
   color: rgb(110, 4, 4);
@@ -40,7 +41,7 @@
 .spot-data > h3 {
   font-size: 22px;
   font-weight: bold;
-  font-family: "Architects Daughter", cursive;
+  font-family: 'Montserrat', sans-serif;
   margin-left: 25%;
   margin-top: 1px;
   margin-bottom: 4px;
@@ -49,7 +50,7 @@
 .spot-data > h4 {
   font-size: 18px;
   font-weight: bold;
-  font-family: "DM Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin-left: 30%;
   color: rgb(71, 1, 1);
 }
@@ -57,7 +58,7 @@
 .spot-data > h5 {
   font-size: 24px;
   font-weight: bold;
-  font-family: "DM Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: rgb(26, 13, 13);
   overflow: wrap;
 }
@@ -71,8 +72,8 @@
   background-color: #f1eade;
   color: #342a21;
   border-radius: 2em;
-  font-family: "RocknRoll One", sans-serif;
-  outline: none;
+  font-family: 'Montserrat', sans-serif;
+    outline: none;
 }
 
 .book-now-button:hover {

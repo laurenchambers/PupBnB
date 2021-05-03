@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 /* .search-results {
   display: flex;
   /* width: 100%; */
@@ -95,7 +95,7 @@ p.search-results {
   font-size: 25px;
   font-weight: bold;
   text-decoration-color: rgb(32, 28, 28);
-  font-family: "RocknRoll One", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 div.search-each-section {
@@ -114,20 +114,20 @@ div.search-each-section {
 }
 
 .card__info > h2 {
-  font-family: "Architects Daughter", cursive;
+  font-family: 'Montserrat', sans-serif;
   padding-top: 20px;
   color: rgb(71, 1, 1);
   padding-left: 15%;
 }
 
 .card__info > h3 {
-  font-family: "DM Sans", sans-serif;
-  color: rgb(71, 1, 1);
+  font-family: 'Montserrat', sans-serif;
+    color: rgb(71, 1, 1);
   padding-left: 30%;
 }
 
 .card__info > h4 {
-  font-family: "DM Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: rgb(71, 1, 1);
   padding-bottom: 20px;
   padding-left: 35%;
