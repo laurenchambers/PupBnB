@@ -15,6 +15,8 @@ module.exports = {
         price: 40,
         img:
           "https://images.squarespace-cdn.com/content/v1/59c967729f7456ec37985037/1595364131033-JCN9NXP3LS587DU9A7W1/ke17ZwdGBToddI8pDm48kDHPSfPanjkWqhH6pl6g5ph7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mwONMR1ELp49Lyc52iWr5dNb1QJw9casjKdtTg1_-y4jz4ptJBmI9gQmbjSQnNGng/%231+-+DIY+Modern+Dog+House.JPG?format=2500w",
+        lat: 30.271003844386527,
+        lng: -97.7425217576266,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -30,6 +32,8 @@ module.exports = {
         price: 80,
         img:
           "https://img.sunset02.com/sunsetm/wp-content-uploads/2019-03-28UTC09/woof-ranch-doghouse-pd-workshop-pr-0718.jpg",
+        lat: 30.238578738612254,
+        lng: -97.71458978846458,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -45,6 +49,8 @@ module.exports = {
         price: 45,
         img:
           "https://cdn.vox-cdn.com/thumbor/qI3d4NO7Rw7Te465gqbYtJafT5E=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19310555/Accomplice.jpg",
+        lat: 30.289493866310405,
+        lng: -97.83350210195509,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -60,6 +66,8 @@ module.exports = {
         price: 60,
         img:
           "https://usenaturalstone.org/wp-content/uploads/2017/10/Barkitecture.jpg",
+        lat: 30.238578738612254,
+        lng: -97.71458978846458,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -75,6 +83,8 @@ module.exports = {
         price: 100,
         img:
           "https://i.pinimg.com/originals/ef/f9/c2/eff9c2504cef8073630c451c3b87661f.jpg",
+        lat: 30.238578738612254,
+        lng: -97.71458978846458,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -90,6 +100,8 @@ module.exports = {
         price: 35,
         img:
           "https://i.pinimg.com/originals/a9/a9/8f/a9a98f5a83c4ade4aac1daed4eb776f2.jpg",
+        lat: 30.238578738612254,
+        lng: -97.71458978846458,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -105,6 +117,8 @@ module.exports = {
         price: 55,
         img:
           "https://cdn.homedit.com/wp-content/uploads/2019/02/Green-dog-cool-house-design.jpg",
+        lat: 30.238578738612254,
+        lng: -97.71458978846458,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -150,6 +164,8 @@ module.exports = {
         price: 65,
         img:
           "https://blog.springtimeinc.com/wp-content/uploads/2018/02/dog-mansion.jpg",
+        lat: 30.238578738612254,
+        lng: -97.71458978846458,
         createdAt: new Date(),
         updatedAt: new Date(),
       },

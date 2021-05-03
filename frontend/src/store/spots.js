@@ -16,9 +16,9 @@ export const displaySpots = (spots) => ({
   payload: spots,
 });
 
-export const showSix = (sixSpots) => ({
+export const showSix = (featured) => ({
   type: DISPLAY_SIX_SPOTS,
-  payload: sixSpots,
+  featured,
 });
 
 export const createSpot = (spot) => ({
@@ -56,9 +56,9 @@ export const showMultipleSpots = () => async (dispatch) => {
 export const showSixSpots = () => async (dispatch) => {
   const res = await csrfFetch(`/api/spots/six/`);
   if (res.ok) {
-    const data = await res.json();
+    const featured = await res.json();
     // console.log("MMULTIPLE", data);
-    dispatch(showSix(data.spots));
+    dispatch(showSix(featured.spots));
     return res;
   }
 };
@@ -129,7 +129,7 @@ const spotsReducer = (state = initialState, action) => {
       return newState;
     case DISPLAY_SIX_SPOTS:
       newState = {};
-      action.payload.forEach((spot) => {
+      action.featured.forEach((spot) => {
         newState[spot.id] = spot;
       });
       return newState;
