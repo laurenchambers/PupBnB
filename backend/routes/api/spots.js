@@ -1,10 +1,10 @@
 // backend/routes/api/users.js
 const express = require("express");
 const asyncHandler = require("express-async-handler");
-
 const router = express.Router();
-const { Spot } = require("../../db/models");
-const { Comment } = require("../../db/models");
+const db = require("../../db/models");
+const Spot = db.Spot;
+const Rating = db.Rating;
 
 //route to display ALL spots
 router.get(
@@ -20,14 +20,14 @@ router.get(
 router.get(
   "/:id",
   asyncHandler(async (req, res) => {
-    const id = parseInt(req.params.id, 10);
-    console.log("ID!!!!", req.params);
-    const spot = await Spot.findOne({
+    const id = req.params.id;
+    const spot = [];
+    const spotObj = await Spot.findOne({
       where: {
         id,
       },
     });
-    // console.log(spots);
+    spot.push(spotObj);
     res.json({ spot });
   })
 );
@@ -37,7 +37,7 @@ router.get(
   "/ratings",
   asyncHandler(async (req, res) => {
     console.log(req.params);
-    const comments = await Comment.findAll();
+    const comments = await Rating.findAll();
     res.json({ comments });
   })
 );
