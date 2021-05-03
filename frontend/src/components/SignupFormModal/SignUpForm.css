@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 .form__area {
   background-color: rgb(255, 217, 222);
   border-radius: 0.5em;
@@ -7,7 +7,7 @@
 
 .errors__list {
   color: red;
-  font-family: "RocknRoll One", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   padding: 1.5px;
   font-size: 12px;
   text-decoration: none;
@@ -16,7 +16,7 @@
 
 .form__input-area {
   background-color: rgb(255, 217, 222);
-  font-family: "RocknRoll One", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   padding: 5px;
 }
 
@@ -28,7 +28,7 @@
 }
 .form__dropdown-button {
   border-radius: 0.5em;
-  font-family: "RocknRoll One", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 12px;
 }
 .login__form-button {
@@ -43,12 +43,11 @@
   background-color: #f1eade;
   color: #342a21ee;
   border-radius: 2em;
-  font-family: "RocknRoll One", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   outline: none;
 }
 
 .login__form-submit-button:hover {
-  background-color: #382110;
-  color: #f4f1ea;
+  color: black;
   cursor: pointer;
 }

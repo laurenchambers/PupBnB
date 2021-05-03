@@ -46,7 +46,7 @@ function Navigation({ isLoaded }) {
           <div
             style={{
               fontWeight: "bold",
-              fontFamily: '"RocknRoll One", sans-serif',
+              fontFamily: "Montserrat",
               listStyle: "none",
               textDecoration: "none",
               color: "#da667b",

@@ -45,6 +45,14 @@ module.exports = {
         allowNull: true,
         type: Sequelize.TEXT,
       },
+      lat: {
+        type: Sequelize.NUMERIC(10, 5),
+        allowNull: true,
+      },
+      lng: {
+        type: Sequelize.NUMERIC(10, 5),
+        allowNull: true,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

@@ -16,6 +16,16 @@ router.get(
   })
 );
 
+//route to display SIX spots
+router.get(
+  "/six",
+  asyncHandler(async (req, res) => {
+    const spots = await Spot.findAll({ limit: 6 });
+    // console.log(spots);
+    res.json({ spots });
+  })
+);
+
 //route for ONE spot
 router.get(
   "/:id",
