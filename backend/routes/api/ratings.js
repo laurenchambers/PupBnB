@@ -3,7 +3,7 @@ const express = require("express");
 const asyncHandler = require("express-async-handler");
 
 const router = express.Router();
-const { Review } = require("../../db/models/");
+const { Review } = require("../../db/models/rating");
 
 //GET THE RATINGS
 router.get(
@@ -21,15 +21,14 @@ router.get(
 
 //POST A RATING
 router.post(
-  "/add-rating/",
+  "/",
   asyncHandler(async (req, res) => {
     // const userId = parseInt(req.params.userId);
     // const spotId = parseInt(req.params.spotId);
     // const id = req.params.id;
-    console.log("PARAMS RATING", req.params);
 
     const { rating, comment, spotId, userId } = req.body;
-
+    console.log("body!!!!!!!", req.body);
     const review = await Review.create({
       userId,
       spotId,
@@ -37,10 +36,7 @@ router.post(
       rating,
     });
     res.json({
-      userId,
-      spotId,
-      comment,
-      rating,
+      review,
     });
   })
 );

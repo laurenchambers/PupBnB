@@ -117,15 +117,15 @@ const spotsReducer = (state = initialState, action) => {
         newState[spot.id] = spot;
       });
       return newState;
-    case DISPLAY_MULTIPLE_SPOTS:
-      newState = {};
-      action.payload.forEach((spot) => {
-        newState[spot.id] = spot;
-      });
-      return newState;
     case DISPLAY_SIX_SPOTS:
       newState = {};
       action.featured.forEach((spot) => {
+        newState[spot.id] = spot;
+      });
+      return newState;
+    case DISPLAY_MULTIPLE_SPOTS:
+      newState = {};
+      action.payload.forEach((spot) => {
         newState[spot.id] = spot;
       });
       return newState;

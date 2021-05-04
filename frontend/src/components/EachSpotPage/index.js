@@ -67,13 +67,13 @@ function SpotsPage() {
   const spot = useSelector((state) => state.spots[id]);
   const defaultMarker = { lat: spot?.lat, lng: spot?.lng };
   console.log("market", defaultMarker);
-
+  const spotId = useSelector((state) => state?.spots[0]?.id);
   // const reviewsArr = useSelector((state) => state.ratings);
 
   useEffect(() => {
-    dispatch(getSpotsRatings(id));
+    dispatch(getSpotsRatings(spotId));
     dispatch(showIndividualSpot(id));
-  }, [dispatch, id]);
+  }, [dispatch]);
 
   if (!spot) return null;
   const {

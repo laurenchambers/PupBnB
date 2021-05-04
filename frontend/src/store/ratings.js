@@ -1,7 +1,7 @@
 import { csrfFetch } from "./csrf";
 
 const GET_RATINGS = "/ratings/getRatings";
-// const POST_RATING = "ratings/postRating";
+const CREATE_RATING = "ratings/CREATE_RATING";
 
 const getRatings = (payload) => {
   return {
@@ -10,12 +10,10 @@ const getRatings = (payload) => {
   };
 };
 
-// const postRating = (payload) => {
-//   return {
-//     type: POST_RATING,
-//     payload,
-//   };
-// };
+const createNewRating = (review) => ({
+  type: CREATE_RATING,
+  payload: review,
+});
 
 export const getSpotsRatings = (spotId) => async (dispatch) => {
   const res = await csrfFetch(`/api/ratings/${spotId}`);
@@ -26,22 +24,27 @@ export const getSpotsRatings = (spotId) => async (dispatch) => {
 };
 
 export const createRating = (review) => async (dispatch) => {
-  const { rating, comment, spotId, userId } = review;
-  await csrfFetch(`/api/ratings/add-rating/`, {
+  const { userId, rating, comment, spotId } = review;
+  const res = await csrfFetch(`/api/ratings/`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ userId, spotId, rating, comment }),
   });
+  const data = await res.json();
+  dispatch(createNewRating(data.review));
+  return data;
 };
 
 const ratingsReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
-    // case POST_RATING: {
-    //   newState.rating = { ...action.payload };
-    //   // newState.comment = { ...action.payload.comment };
-    //   return newState;
-    // }
+    case CREATE_RATING: {
+      newState = Object.assign({}, state, {
+        [action.payload.id]: action.payload,
+      });
+
+      return newState;
+    }
     case GET_RATINGS:
       //   for (let rating of action.payload) {
       //     newState[rating[0].id] = rating.id;
