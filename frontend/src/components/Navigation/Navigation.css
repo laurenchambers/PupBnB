@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
 
 /* .navbar__pupbnb-logo {
   font-weight: bold;
@@ -40,7 +40,7 @@ body {
   height: 30px;
   font-size: 18px;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   align-items: center;
   background-color: #ffffff !important;
   border: 1px solid #dddddd !important;
@@ -59,7 +59,7 @@ body {
   height: 30px;
   font-size: 18px;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #ffffff !important;
   border: 1px solid #dddddd !important;
   border-radius: 40px !important;
@@ -72,17 +72,17 @@ body {
 }
 
 .profile-dropdown {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #342a21;
   list-style-type: none;
 }
 
 .profile-button {
   width: 100px;
-  height: 25px;
+  height: 30px;
   font-size: 12px;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #342a21;
   background-color: #ffffff !important;
   border: 1px solid #dddddd !important;
@@ -93,6 +93,7 @@ body {
   align-items: center;
   margin-bottom: 5px;
   outline: none;
+  cursor: pointer;
 }
 
 .profile-button:hover {
@@ -106,11 +107,11 @@ body {
 }
 .paw-button {
   width: 100px;
-  height: 25px;
+  height: 30px;
   font-size: 13px;
   padding: 2px;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #ffffff !important;
   border: 1px solid #dddddd !important;
   border-radius: 40px !important;
@@ -119,9 +120,13 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 5px;
+  margin-left: 15px;
   outline: none;
+  cursor: pointer;
 }
-
+.paw-button:hover {
+  color: #da667b;
+}
 .navbar__container-button:hover {
   cursor: pointer;
   background-color: #c9b79c;
