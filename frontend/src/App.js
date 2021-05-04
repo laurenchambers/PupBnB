@@ -38,7 +38,7 @@ function App() {
           <Route path="/search">
             <SearchResults />
           </Route>
-          <Route path="ratings/:userId/:spotId">
+          <Route path="ratings/">
             <LeaveReview />
           </Route>
           <Route>

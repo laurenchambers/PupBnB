@@ -3,15 +3,14 @@ const express = require("express");
 const asyncHandler = require("express-async-handler");
 
 const router = express.Router();
-const { Rating } = require("../../db/models/");
+const { Review } = require("../../db/models/");
 
 //GET THE RATINGS
 router.get(
   "/:spotId",
   asyncHandler(async (req, res) => {
     const spotId = parseInt(req.params.spotId);
-    console.log("ratingPRAMS", req.params);
-    const spotRatings = await Rating.findAll({
+    const spotRatings = await Review.findAll({
       where: {
         spotId,
       },
@@ -22,22 +21,26 @@ router.get(
 
 //POST A RATING
 router.post(
-  "/:spotId",
+  "/add-rating/",
   asyncHandler(async (req, res) => {
-    const userId = parseInt(req.params.userId);
-    const spotId = parseInt(req.params.spotId);
-    console.log("PARAMS USER", req.params.spotId);
+    // const userId = parseInt(req.params.userId);
+    // const spotId = parseInt(req.params.spotId);
+    // const id = req.params.id;
+    console.log("PARAMS RATING", req.params);
 
-    const { rating, comment } = req.body;
+    const { rating, comment, spotId, userId } = req.body;
 
-    const newRating = await Review.create({
+    const review = await Review.create({
       userId,
       spotId,
-      body: comment,
+      comment,
       rating,
     });
     res.json({
-      newRating,
+      userId,
+      spotId,
+      comment,
+      rating,
     });
   })
 );

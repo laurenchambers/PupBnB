@@ -103,7 +103,7 @@ module.exports = (sequelize, DataTypes) => {
     //   foreignKey: "UserId",
     // };
     // User.belongsToMany(models.Spot, { columnMapping });
-    User.hasMany(models.Rating, { foreignKey: "userId" });
+    User.hasMany(models.Review, { foreignKey: "userId" });
   };
   return User;
 };

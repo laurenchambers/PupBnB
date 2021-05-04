@@ -1,31 +1,39 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+// import { useParams } from "react-router-dom";
 import { showIndividualSpot } from "../../store/spots";
-import { newNewRating } from "../../store/spots";
+import { createRating } from "../../store/ratings";
 import "./LeaveAReview.css";
 
 const LeaveReview = ({ sessionUser }) => {
-  const { userId, spotId } = useParams();
   const dispatch = useDispatch();
-  //   const spot = useSelector((state) => state.spots[id]);
+  // const { spotId } = useParams();
+  // console.log("spotid from params", spotId);
+  const user = useSelector((state) => state.session.user);
+  const spot = useSelector((state) => state.spots[0]);
 
-  const [rating, setRating] = useState("");
+  const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const newUserRating = { rating, comment };
-//
-    dispatch(newNewRating(userId, spotId, newUserRating));
-    setRating("");
+    const submission = {
+      userId: user?.id,
+      spotId: spot?.id,
+      rating,
+      comment,
+    };
+    console.log("submission", submission);
+    dispatch(createRating(submission));
+    window.location.reload();
+    setRating(0);
     setComment("");
+    // return history.push("/home")
   };
 
   useEffect(() => {
-    dispatch(showIndividualSpot(spotId));
-  }, [dispatch, spotId]);
+    dispatch(showIndividualSpot(spot));
+  }, [dispatch, spot]);
 
   return (
     <div className="review-form-container">
@@ -53,7 +61,7 @@ const LeaveReview = ({ sessionUser }) => {
             />
           </label>
         </div>
-        <button className="review-button" type="submit">
+        <button className="review-button" tonClick={handleSubmit}>
           Submit Your Rating and Comment
         </button>
       </form>
