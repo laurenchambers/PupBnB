@@ -1,11 +1,13 @@
 // frontend/src/components/Navigation/ProfileButton.js
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+  const history = useHistory();
 
   const openMenu = () => {
     if (showMenu) return;
@@ -27,6 +29,7 @@ function ProfileButton({ user }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    return history.push("/");
   };
 
   return (
@@ -38,7 +41,6 @@ function ProfileButton({ user }) {
         </button>
         {showMenu && (
           <ul className="profile-dropdown">
-            <li>{user.username}</li>
             <li>{user.email}</li>
             <li>
               <button className="profile-button" onClick={logout}>

@@ -16,7 +16,16 @@ function Navigation({ isLoaded }) {
 
   let sessionLinks;
   if (sessionUser) {
-    sessionLinks = <ProfileButton user={sessionUser} />;
+    sessionLinks = (
+      <ul>
+        <div>
+          <ProfileButton user={sessionUser} />
+        </div>
+        <div>
+          <CreateSpotModal />
+        </div>
+      </ul>
+    );
   } else {
     sessionLinks = (
       <div className="navbar__pupbnb">
@@ -27,9 +36,9 @@ function Navigation({ isLoaded }) {
           <div>
             <SignUpFormModal />
           </div>
-          <div>
+          {/* <div>
             <CreateSpotModal />
-          </div>
+          </div> */}
           <div>
             <SpotsPage />
           </div>

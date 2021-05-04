@@ -36,13 +36,12 @@ function SpotsLandingPage() {
               <div className="individual-spot">
                 <img src={img} alt="" />
                 <div className="individual-spot-info">
-                  <h2>{name}</h2>
-                  <h3>{streetAddress}</h3>
-                  <h3>
+                  <div>{name}</div>
+                  <div>{streetAddress}</div>
+                  <div>
                     {city}, {state} {zipCode}
-                  </h3>
-                  <h3>${price} per night!</h3>
-                  <h4>{description}</h4>
+                  </div>
+                  <div>${price} / night</div>
                 </div>
               </div>
             </Link>

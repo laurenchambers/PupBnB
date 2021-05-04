@@ -68,8 +68,7 @@ function SpotsPage() {
   const defaultMarker = { lat: spot?.lat, lng: spot?.lng };
   console.log("market", defaultMarker);
 
-  // const ratings = useSelector((state) => state.ratings);
-  // const ratings = useSelector((state) => state.ratings[id];
+  const reviewsArr = useSelector((state) => state.ratings);
 
   useEffect(() => {
     dispatch(getSpotsRatings(id));
@@ -116,8 +115,8 @@ function SpotsPage() {
           <div>
             <button className="book-now-button">Book Now!</button>
           </div>
-          {/* <h6>Average Rating: {ratings?.map((rating) => rating.rating)}</h6> */}
-          {/* <h6>User Comments: {ratings?.map((rating) => rating.comment)}</h6> */}
+          <h6>Average Rating: {reviewsArr?.map((review) => review.rating)}</h6>
+          <h6>User Comments: {reviewsArr?.map((review) => review.comment)}</h6>
           <LeaveReview />
         </div>
       </div>

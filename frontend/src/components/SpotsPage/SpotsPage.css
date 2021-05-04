@@ -1,14 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
 .spot-container {
   display: flex;
+  flex-wrap: wrap;
   width: 400px;
   margin: 30px;
-  border-radius: 10px;
   height: min-content;
 }
-
+.individual-spot {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 .individual-spot > img {
   border-radius: 10px;
   object-fit: cover;
@@ -19,7 +24,7 @@
 }
 
 .individual-spot-info {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-weight: bold;
   margin-top: -9px;
@@ -41,7 +46,7 @@
 .individual-spot-info > h3 {
   font-size: 18px;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-left: 25%;
   margin-top: 1px;
   margin-bottom: 2px;
@@ -50,7 +55,7 @@
 .individual-spot-info > h4 {
   font-size: 19px;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 5px;
   margin-left: 10px;
   margin-right: 10px;
