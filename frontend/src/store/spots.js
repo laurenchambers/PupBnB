@@ -97,14 +97,14 @@ export const createNewSpot = (spot) => async (dispatch) => {
   return data;
 };
 
-export const createRating = (review) => async (dispatch) => {
-  const { rating, comment, spotId, userId } = review;
-  await csrfFetch(`/api/spots/add-rating/`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ userId, spotId, rating, comment }),
-  });
-};
+// export const createRating = (review) => async (dispatch) => {
+//   const { rating, comment, spotId, userId } = review;
+//   await csrfFetch(`/api/spots/add-rating/`, {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({ userId, spotId, rating, comment }),
+//   });
+// };
 
 //reducer
 const initialState = {};

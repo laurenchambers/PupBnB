@@ -84,26 +84,26 @@ router.post(
 );
 
 // //POST A RATING
-router.post(
-  "/add-rating/",
-  asyncHandler(async (req, res) => {
-    // const userId = parseInt(req.params.userId);
-    // const spotId = parseInt(req.params.spotId);
-    const id = req.params.id;
-    console.log("PARAMS USER", req.params.spotId);
+// router.post(
+//   "/add-rating/",
+//   asyncHandler(async (req, res) => {
+//     // const userId = parseInt(req.params.userId);
+//     // const spotId = parseInt(req.params.spotId);
+//     const id = req.params.id;
+//     console.log("PARAMS USER", req.params.spotId);
 
-    const { rating, comment, spotId, userId } = req.body;
+//     const { rating, comment, spotId, userId } = req.body;
 
-    const review = await Review.create({
-      userId,
-      spotId,
-      comment,
-      rating,
-    });
-    res.json({
-      review,
-    });
-  })
-);
+//     const review = await Review.create({
+//       userId,
+//       spotId,
+//       comment,
+//       rating,
+//     });
+//     res.json({
+//       review,
+//     });
+//   })
+// );
 
 module.exports = router;

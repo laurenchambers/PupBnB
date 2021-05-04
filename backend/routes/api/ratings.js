@@ -20,25 +20,29 @@ router.get(
 );
 
 //POST A RATING
-// router.post(
-//   "/:spotId",
-//   asyncHandler(async (req, res) => {
-//     const userId = parseInt(req.params.userId);
-//     const spotId = parseInt(req.params.spotId);
-//     console.log("PARAMS USER", req.params.spotId);
+router.post(
+  "/add-rating/",
+  asyncHandler(async (req, res) => {
+    // const userId = parseInt(req.params.userId);
+    // const spotId = parseInt(req.params.spotId);
+    // const id = req.params.id;
+    console.log("PARAMS RATING", req.params);
 
-//     const { rating, comment } = req.body;
+    const { rating, comment, spotId, userId } = req.body;
 
-//     const newRating = await Review.create({
-//       userId,
-//       spotId,
-//       body: comment,
-//       rating,
-//     });
-//     res.json({
-//       newRating,
-//     });
-//   })
-// );
+    const review = await Review.create({
+      userId,
+      spotId,
+      comment,
+      rating,
+    });
+    res.json({
+      userId,
+      spotId,
+      comment,
+      rating,
+    });
+  })
+);
 
 module.exports = router;
