@@ -10,7 +10,7 @@ const LeaveReview = ({ sessionUser }) => {
   const dispatch = useDispatch();
   //   const spot = useSelector((state) => state.spots[id]);
 
-  const [rating, setRating] = useState("");
+  const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
 
   const handleSubmit = (e) => {
@@ -19,7 +19,7 @@ const LeaveReview = ({ sessionUser }) => {
     // const newUserRating = { rating, comment };
     //
     dispatch(createRating(userId, spotId, rating, comment));
-    setRating("");
+    setRating(0);
     setComment("");
   };
 

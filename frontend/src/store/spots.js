@@ -97,8 +97,8 @@ export const createNewSpot = (spot) => async (dispatch) => {
   return data;
 };
 
-export const createRating = (newRating) => async (dispatch) => {
-  const { rating, comment, spotId, userId } = newRating;
+export const createRating = (review) => async (dispatch) => {
+  const { rating, comment, spotId, userId } = review;
   await csrfFetch(`/api/spots/add-rating/`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
