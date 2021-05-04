@@ -30,6 +30,7 @@ router.get(
 router.get(
   "/:id",
   asyncHandler(async (req, res) => {
+    console.log("SPOTparams", req.params);
     const id = req.params.id;
     const spot = [];
     const spotObj = await Spot.findOne({
@@ -46,7 +47,6 @@ router.get(
 router.get(
   "/ratings",
   asyncHandler(async (req, res) => {
-    console.log(req.params);
     const comments = await Rating.findAll();
     res.json({ comments });
   })
@@ -84,25 +84,26 @@ router.post(
 );
 
 // //POST A RATING
-// router.post(
-//   "/:spotId",
-//   asyncHandler(async (req, res) => {
-//     const userId = parseInt(req.params.userId);
-//     const spotId = parseInt(req.params.spotId);
-//     console.log("PARAMS USER", req.params.spotId);
+router.post(
+  "/add-rating/",
+  asyncHandler(async (req, res) => {
+    // const userId = parseInt(req.params.userId);
+    // const spotId = parseInt(req.params.spotId);
+    const id = req.params.id;
+    console.log("PARAMS USER", req.params.spotId);
 
-//     const { rating, comment } = req.body;
+    const { rating, comment, spotId, userId } = req.body;
 
-//     const newRating = await Review.create({
-//       userId,
-//       spotId,
-//       body: comment,
-//       rating,
-//     });
-//     res.json({
-//       newRating,
-//     });
-//   })
-// );
+    const newRating = await Review.create({
+      userId,
+      spotId,
+      comment,
+      rating,
+    });
+    res.json({
+      newRating,
+    });
+  })
+);
 
 module.exports = router;

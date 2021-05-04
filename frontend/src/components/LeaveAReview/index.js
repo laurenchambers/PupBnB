@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { showIndividualSpot } from "../../store/spots";
-import { newNewRating } from "../../store/spots";
+import { createRating } from "../../store/spots";
 import "./LeaveAReview.css";
 
 const LeaveReview = ({ sessionUser }) => {
@@ -16,9 +16,9 @@ const LeaveReview = ({ sessionUser }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newUserRating = { rating, comment };
-//
-    dispatch(newNewRating(userId, spotId, newUserRating));
+    // const newUserRating = { rating, comment };
+    //
+    dispatch(createRating(userId, spotId, rating, comment));
     setRating("");
     setComment("");
   };

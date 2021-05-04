@@ -3,7 +3,7 @@ import { csrfFetch } from "./csrf";
 const SHOW_SPOT_PAGE = "spots/SET_SPOTS_PAGE";
 const DISPLAY_MULTIPLE_SPOTS = "spots/DISPLAY_SPOTS";
 const CREATE_SPOT = "spots/CREATE_SPOT";
-const NEW_RATING = "spots/newRating";
+// const NEW_RATING = "spots/newRating";
 const DISPLAY_SIX_SPOTS = "spots/DISPLAY_SIX_SPOTS";
 
 export const setSpotsPage = (payload) => ({
@@ -26,12 +26,12 @@ export const createSpot = (spot) => ({
   payload: spot,
 });
 
-const newRating = (payload) => {
-  return {
-    type: NEW_RATING,
-    payload,
-  };
-};
+// const newRating = (payload) => {
+//   return {
+//     type: NEW_RATING,
+//     payload,
+//   };
+// };
 
 export const showIndividualSpot = (id) => async (dispatch) => {
   const numId = Number(id);
@@ -97,17 +97,13 @@ export const createNewSpot = (spot) => async (dispatch) => {
   return data;
 };
 
-export const newNewRating = (userId, spotId, rating, comment) => async (
-  dispatch
-) => {
-  // const { rating, comment } = newUserRating;
-  const res = await csrfFetch(`/api/spots/${spotId}`, {
+export const createRating = (newRating) => async (dispatch) => {
+  const { rating, comment, spotId, userId } = newRating;
+  await csrfFetch(`/api/spots/add-rating/`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ userId, spotId, rating, comment }),
   });
-  const data = await res.json();
-  dispatch(newRating(data));
 };
 
 //reducer
@@ -140,11 +136,11 @@ const spotsReducer = (state = initialState, action) => {
 
       return newState;
     }
-    case NEW_RATING:
-      newState = {};
-      newState.rating = { ...action.payload };
-      // newState.comment = { ...action.payload.comment };
-      return newState;
+    // case NEW_RATING:
+    //   newState = {};
+    //   newState.rating = { ...action.payload };
+    //   // newState.comment = { ...action.payload.comment };
+    //   return newState;
 
     default:
       return state;
