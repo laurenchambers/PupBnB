@@ -52,9 +52,10 @@
 * [JavaScript]()
 * [React]()
 * [Redux]()
-* [PostgreSQL]()
-* [HTML]()
 * [CSS]()
+* [Express]()
+* [Sequelize]()
+
 
 
 
