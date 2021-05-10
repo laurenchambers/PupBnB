@@ -50,12 +50,10 @@
 ### Built With
 
 * [JavaScript]()
-* [Python]()
 * [React]()
 * [Redux]()
-* [Flask]()
-* [SQLAlchemy]()
-* [Docker]()
+* [PostgreSQL]()
+* [HTML]()
 * [CSS]()
 
 
