@@ -16,16 +16,6 @@ router.get(
   })
 );
 
-//route to display SIX spots
-router.get(
-  "/six",
-  asyncHandler(async (req, res) => {
-    const spots = await Spot.findAll({ limit: 6 });
-    // console.log(spots);
-    res.json({ spots });
-  })
-);
-
 //route for ONE spot
 router.get(
   "/:id",
@@ -83,6 +73,20 @@ router.post(
   })
 );
 
+//get rating
+router.get(
+  "/:id/ratings/",
+  asyncHandler(async (req, res) => {
+    // may need parseInt on next line
+    const spotId = req.params.id;
+    const reviews = await Review.findAll({
+      where: { spotId },
+      include: User,
+    });
+
+    return res.json({ reviews });
+  })
+);
 // //POST A RATING
 // router.post(
 //   "/add-rating/",
