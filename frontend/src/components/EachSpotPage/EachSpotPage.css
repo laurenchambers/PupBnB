@@ -9,11 +9,8 @@
   border-radius: 10px;
   height: min-content;
   overflow: wrap;
-}
-
-.individual-spot-container {
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   object-fit: cover;
   width: 500px;
   text-align: center;
@@ -21,7 +18,13 @@
   margin: 20px 20px 10px 0;
   border-radius: 5px;
 }
+.bookings-container {
+  display: flex;
+}
 
+.image-calendar-container {
+  display: flex;
+}
 .spot-page-image {
   width: 600px;
   height: 600px;
@@ -82,6 +85,32 @@
   border-radius: 2em;
   font-family: "Montserrat", sans-serif;
   outline: none;
+}
+.book-now-button-close {
+  margin-left: 35%;
+  height: 30px;
+  width: 125px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #342a21;
+  border-radius: 2em;
+  font-family: "Montserrat", sans-serif;
+  outline: none;
+  cursor: pointer;
+}
+
+.confirm-book-now-button {
+  margin-left: 35%;
+  height: 30px;
+  width: 200px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #f1eade;
+  color: #342a21;
+  border-radius: 2em;
+  font-family: "Montserrat", sans-serif;
+  outline: none;
+  cursor: pointer;
 }
 
 .book-now-button:hover {

@@ -52,7 +52,7 @@ function NewSpotForm() {
             <label>
               Name
               <input
-                className="form__input-for-text"
+                className="form__input-for-address"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -64,7 +64,7 @@ function NewSpotForm() {
             <label>
               Description
               <input
-                className="form__input-for-text"
+                className="form__input-for-description"
                 type="text"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
@@ -76,7 +76,7 @@ function NewSpotForm() {
             <label>
               Street Address
               <input
-                className="form__input-for-text"
+                className="form__input-for-address"
                 type="text"
                 value={streetAddress}
                 onChange={(e) => setStreetAddress(e.target.value)}
@@ -88,7 +88,7 @@ function NewSpotForm() {
             <label>
               City
               <input
-                className="form__input-for-text"
+                className="form__input-for-address"
                 type="text"
                 value={city}
                 onChange={(e) => setCity(e.target.value)}

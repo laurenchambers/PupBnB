@@ -3,8 +3,13 @@ import { csrfFetch } from "./csrf";
 const SHOW_SPOT_PAGE = "spots/SET_SPOTS_PAGE";
 const DISPLAY_MULTIPLE_SPOTS = "spots/DISPLAY_SPOTS";
 const CREATE_SPOT = "spots/CREATE_SPOT";
+const LOAD = "spots/LOAD";
+
+const load = (spots) => ({
+  type: LOAD,
+  spots,
+});
 // const NEW_RATING = "spots/newRating";
-const DISPLAY_SIX_SPOTS = "spots/DISPLAY_SIX_SPOTS";
 
 export const setSpotsPage = (payload) => ({
   type: SHOW_SPOT_PAGE,
@@ -14,11 +19,6 @@ export const setSpotsPage = (payload) => ({
 export const displaySpots = (spots) => ({
   type: DISPLAY_MULTIPLE_SPOTS,
   payload: spots,
-});
-
-export const showSix = (featured) => ({
-  type: DISPLAY_SIX_SPOTS,
-  featured,
 });
 
 export const createSpot = (spot) => ({
@@ -37,7 +37,6 @@ export const showIndividualSpot = (id) => async (dispatch) => {
   const numId = Number(id);
   const res = await csrfFetch(`/api/spots/${numId}`);
   const data = await res.json();
-  console.log("data!!!", data);
   console.log(data.spot);
   dispatch(setSpotsPage(data.spot));
   return res;
@@ -49,16 +48,6 @@ export const showMultipleSpots = () => async (dispatch) => {
     const data = await res.json();
     // console.log("MMULTIPLE", data);
     dispatch(displaySpots(data.spots));
-    return res;
-  }
-};
-
-export const showSixSpots = () => async (dispatch) => {
-  const res = await csrfFetch(`/api/spots/six/`);
-  if (res.ok) {
-    const featured = await res.json();
-    // console.log("MMULTIPLE", data);
-    dispatch(showSix(featured.spots));
     return res;
   }
 };
@@ -97,6 +86,14 @@ export const createNewSpot = (spot) => async (dispatch) => {
   return data;
 };
 
+export const getReviews = (id) => async (dispatch) => {
+  const res = await csrfFetch(`/api/spots/${id}/reviews`);
+  const reviews = await res.json();
+
+  if (res.ok) {
+    dispatch(load(reviews));
+  }
+};
 // export const createRating = (review) => async (dispatch) => {
 //   const { rating, comment, spotId, userId } = review;
 //   await csrfFetch(`/api/spots/add-rating/`, {
@@ -117,12 +114,6 @@ const spotsReducer = (state = initialState, action) => {
         newState[spot.id] = spot;
       });
       return newState;
-    case DISPLAY_SIX_SPOTS:
-      newState = {};
-      action.featured.forEach((spot) => {
-        newState[spot.id] = spot;
-      });
-      return newState;
     case DISPLAY_MULTIPLE_SPOTS:
       newState = {};
       action.payload.forEach((spot) => {
@@ -136,6 +127,8 @@ const spotsReducer = (state = initialState, action) => {
 
       return newState;
     }
+    case LOAD:
+      return { ...state, ...action.spots };
     // case NEW_RATING:
     //   newState = {};
     //   newState.rating = { ...action.payload };

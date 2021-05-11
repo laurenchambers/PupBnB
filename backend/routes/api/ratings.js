@@ -10,6 +10,7 @@ router.get(
   "/:spotId",
   asyncHandler(async (req, res) => {
     const spotId = parseInt(req.params.spotId);
+    console.log("REQ", req.params);
     const spotRatings = await Review.findAll({
       where: {
         spotId,
@@ -28,7 +29,6 @@ router.post(
     // const id = req.params.id;
 
     const { rating, comment, spotId, userId } = req.body;
-    console.log("body!!!!!!!", req.body);
     const review = await Review.create({
       userId,
       spotId,
