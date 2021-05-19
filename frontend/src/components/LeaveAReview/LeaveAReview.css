@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
 
 .review-form-title {
   margin-top: 50px;
   font-size: 30px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .review-button {
@@ -15,17 +15,23 @@
   width: 200px;
   font-size: 12px;
   font-weight: bold;
-  background-color: rgb(253, 216, 222);
+  background-color: #f1eade;
   color: #342a21;
   border-radius: 2em;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   outline: none;
 }
 
 .review-form-input {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 5px;
   outline: none;
+}
+.booking-confirmed {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  color: rgb(196, 14, 14);
+  font-weight: 900;
 }
 
 .review-form-number {
@@ -47,8 +53,8 @@
 }
 
 .review-button:hover {
-  background-color: rgb(255, 176, 189);
-  color: #342a21;
+  background-color: #382110;
+  color: #f4f1ea;
   cursor: pointer;
   outline: none;
 }

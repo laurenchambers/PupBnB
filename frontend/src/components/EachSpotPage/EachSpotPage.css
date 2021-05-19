@@ -32,14 +32,19 @@
   border-radius: 4px;
   margin-left: 80px;
 }
+.spot-data-container {
+  width: 480px;
+  display: block;
+}
 .spot-data {
+  display: block;
   margin-top: -5.5px;
   border-radius: 10px;
   padding: 20px;
   padding-top: 15px;
   padding-right: 20px;
   padding-left: 20px;
-  width: 400px;
+  width: 480px;
 }
 
 .spot-data > h2 {
@@ -89,9 +94,10 @@
 .book-now-button-close {
   margin-left: 35%;
   height: 30px;
-  width: 125px;
+  width: 175px;
   font-size: 16px;
   font-weight: bold;
+  background-color: #f1eade;
   color: #342a21;
   border-radius: 2em;
   font-family: "Montserrat", sans-serif;
@@ -118,7 +124,10 @@
   color: #f4f1ea;
   cursor: pointer;
 }
-
+.review-area-container {
+  width: 400px;
+  margin-left: 55px;
+}
 /* border-radius: 10px;
   object-fit: cover;
   overflow: hidden;

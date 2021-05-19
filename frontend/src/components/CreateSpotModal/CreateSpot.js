@@ -43,11 +43,6 @@ function NewSpotForm() {
     <div className="entire-form">
       <form className="login__form" onSubmit={handleSubmit}>
         <div className="form__area">
-          {/* <ul className="errors__list">
-          {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
-          ))}
-        </ul> */}
           <div className="form__input-area">
             <label>
               Name

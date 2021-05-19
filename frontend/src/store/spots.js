@@ -4,12 +4,19 @@ const SHOW_SPOT_PAGE = "spots/SET_SPOTS_PAGE";
 const DISPLAY_MULTIPLE_SPOTS = "spots/DISPLAY_SPOTS";
 const CREATE_SPOT = "spots/CREATE_SPOT";
 const LOAD = "spots/LOAD";
+const DELETE_SPOT = "spots/DELETE_SPOT";
 
 const load = (spots) => ({
   type: LOAD,
   spots,
 });
-// const NEW_RATING = "spots/newRating";
+
+const deleteSpot = (spot) => {
+  return {
+    type: DELETE_SPOT,
+    spot,
+  };
+};
 
 export const setSpotsPage = (payload) => ({
   type: SHOW_SPOT_PAGE,
@@ -33,13 +40,26 @@ export const createSpot = (spot) => ({
 //   };
 // };
 
-export const showIndividualSpot = (id) => async (dispatch) => {
-  const numId = Number(id);
-  const res = await csrfFetch(`/api/spots/${numId}`);
+export const showIndividualSpot = (spotId) => async (dispatch) => {
+  const numId = Number(spotId);
+  console.log("ID", numId);
+  const res = await csrfFetch(`/api/spots/${numId}/`);
+  console.log("RES", res);
   const data = await res.json();
-  console.log(data.spot);
+  console.log("data!!", data);
   dispatch(setSpotsPage(data.spot));
   return res;
+};
+
+export const deleteASpot = (spotId) => async (dispatch) => {
+  const numId = Number(spotId);
+  const res = await csrfFetch(`/api/spots/${numId}`, {
+    method: "POST",
+    body: JSON.stringify({ numId }),
+  });
+  const data = await res.json();
+
+  dispatch(deleteSpot(data));
 };
 
 export const showMultipleSpots = () => async (dispatch) => {
@@ -129,6 +149,8 @@ const spotsReducer = (state = initialState, action) => {
     }
     case LOAD:
       return { ...state, ...action.spots };
+    case DELETE_SPOT:
+      return state;
     // case NEW_RATING:
     //   newState = {};
     //   newState.rating = { ...action.payload };
