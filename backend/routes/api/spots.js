@@ -18,9 +18,8 @@ router.get(
 
 //route for ONE spot
 router.get(
-  "/:id",
+  "/:spotId",
   asyncHandler(async (req, res) => {
-    console.log("SPOTparams", req.params);
     const id = req.params.id;
     const spot = [];
     const spotObj = await Spot.findOne({
@@ -30,6 +29,18 @@ router.get(
     });
     spot.push(spotObj);
     res.json({ spot });
+  })
+);
+
+//delete spots
+router.post(
+  "/:spotId",
+  asyncHandler(async (req, res) => {
+    const spot = await Spot.findByPk(req.params.id);
+    console.log("spot", req.params);
+    const item = spot.destroy();
+
+    return res.json({ item });
   })
 );
 

@@ -34,6 +34,7 @@ const bookingsReducer = (state = initialState, action) => {
 
       return newState;
     }
+
     default:
       return state;
   }
