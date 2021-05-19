@@ -136,7 +136,7 @@ function SpotsPage() {
           {user.id === spotId ? (
             <button onClick={handleDelete}>DELETE</button>
           ) : (
-            <div>""</div>
+            <div></div>
           )}
         </div>
       </div>
